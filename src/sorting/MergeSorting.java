@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class MergeSorting {
     public static void main(String[] args) {
-        int[] arr = new int[] {3, 2, 1, 4, 5};
+        int[] arr = new int[] {5, 4, 3, 2, 1};
 
         int start = 0;
-        int end = arr.length -1;
+        int end = arr.length;
         mergeSorting(arr, start, end);
 
         System.out.println(Arrays.toString(arr));
@@ -15,42 +15,42 @@ public class MergeSorting {
     }
 
     private static void mergeSorting(int[] arr, int start, int end) {
-        if(start >= end)
+        if(end-start == 1)
             return;
 
         int mid = (start + end)/2;
         mergeSorting(arr, start, mid); // for left array
-        mergeSorting(arr, mid+1, end); // for right array
+        mergeSorting(arr, mid, end); // for right array
 
         merge(arr, start, mid, end);
-
-        System.out.println(Arrays.toString(arr));
     }
 
-    private static int[] merge(int[] arr, int start, int mid, int end) {
-        if (start >= end)
-            return arr;
-        System.out.print(start+ " "+ end + "\n");
-        int[] toBe = new int[start + end];
+    private static void merge(int[] arr, int start, int mid, int end) {
+
+        System.out.print("left array"+ Arrays.toString(Arrays.copyOfRange(arr, start, mid)) + "\n");
+        System.out.print("right array"+ Arrays.toString(Arrays.copyOfRange(arr, mid, end)) + "\n");
+        System.out.println();
+        int[] toBe = new int[end - start]; // len of new array should be (end - start)
 
         int i = start;
         int j = mid;
         int k = 0;
-        while (i < start && j < end) {
+        while (i < mid && j < end) {
             if(arr[i] < arr[j]) {
-                toBe[k++] = arr[i];
-                i++;
-            } else if (arr[i] > arr[j]) {
-                toBe[k++] = arr[j];
-                j++;
+                toBe[k++] = arr[i++];
+            } else  {
+                toBe[k++] = arr[j++];
             }
         }
-        while (i < start) {
+        while (i < mid) {
             toBe[k++] = arr[i++];
         }
         while (j < end) {
             toBe[k++] = arr[j++];
         }
-        return toBe;
+
+        for (int l = 0; l < toBe.length; l++) {
+            arr[start+l] = toBe[l]; // increment along with start 
+        }
     }
 }
