@@ -22,14 +22,35 @@ public class MergeSorting {
         mergeSorting(arr, start, mid); // for left array
         mergeSorting(arr, mid+1, end); // for right array
 
-        merge(arr, start, end);
+        merge(arr, start, mid, end);
+
+        System.out.println(Arrays.toString(arr));
     }
 
-    private static void merge(int[] arr, int start, int end) {
+    private static int[] merge(int[] arr, int start, int mid, int end) {
         if (start >= end)
-            return;
+            return arr;
         System.out.print(start+ " "+ end + "\n");
         int[] toBe = new int[start + end];
 
+        int i = start;
+        int j = mid;
+        int k = 0;
+        while (i < start && j < end) {
+            if(arr[i] < arr[j]) {
+                toBe[k++] = arr[i];
+                i++;
+            } else if (arr[i] > arr[j]) {
+                toBe[k++] = arr[j];
+                j++;
+            }
+        }
+        while (i < start) {
+            toBe[k++] = arr[i++];
+        }
+        while (j < end) {
+            toBe[k++] = arr[j++];
+        }
+        return toBe;
     }
 }
