@@ -32,8 +32,8 @@ public class MergeSorting {
         System.out.println();
         int[] toBe = new int[end - start]; // len of new array should be (end - start)
 
-        int i = start;
-        int j = mid;
+        int i = start; // start index of left array i.e Arrays.copyOfRange(arr, start, mid)
+        int j = mid; // start index of right array i.e Arrays.copyOfRange(arr, mid, end)
         int k = 0;
         while (i < mid && j < end) {
             if(arr[i] < arr[j]) {
@@ -50,7 +50,7 @@ public class MergeSorting {
         }
 
         for (int l = 0; l < toBe.length; l++) {
-            arr[start+l] = toBe[l]; // increment along with start 
+            arr[start+l] = toBe[l]; // increment along with start
         }
     }
 }
