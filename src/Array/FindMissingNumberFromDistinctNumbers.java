@@ -1,3 +1,5 @@
+package Array;
+
 class FindMissingNumberFromDistinctNumbers {
     public static void main(String[] a) {
         int[] array = {1, 2, 3, 5, 6};

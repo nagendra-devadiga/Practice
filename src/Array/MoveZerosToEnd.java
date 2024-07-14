@@ -1,3 +1,5 @@
+package Array;
+
 public class MoveZerosToEnd {
     public static void main(String[] args) {
         int[] array = {0, 3, 5, 0, 2, 0, 6, 6, 0};

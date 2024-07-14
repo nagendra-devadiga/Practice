@@ -1,4 +1,4 @@
-// It is used in Java for restricting floating-point calculations
+package string;// It is used in Java for restricting floating-point calculations
 // Ensuring the same result on every platform while performing operations in the floating-point variable.
 // Floating-point calculations are platform-dependent i.e. different output (floating-point values) is achieved when a class file is run on different platforms (16/32/64-bit processors)
 

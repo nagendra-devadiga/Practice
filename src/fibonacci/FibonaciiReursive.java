@@ -1,3 +1,5 @@
+package fibonacci;
+
 public class FibonaciiReursive {
     static int fib(int n) {
         if (n <= 1)

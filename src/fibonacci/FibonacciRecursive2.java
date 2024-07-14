@@ -1,5 +1,6 @@
+package fibonacci;
 
-    class FibonacciRecursive2{
+class FibonacciRecursive2{
         static int n1=0,n2=1,n3=0;
         static void printFibonacci(int count){
             if(count>0){

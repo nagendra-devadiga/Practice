@@ -1,3 +1,5 @@
+package fibonacci;
+
 public class IsFibonacci {
     public static void main(String[] args) {
         int item = 200;

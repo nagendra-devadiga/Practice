@@ -1,3 +1,5 @@
+package fibonacci;
+
 public class Fibonacii {
     public static void main(String[] args) {
         int n = 10;

@@ -1,3 +1,5 @@
+package multithreading;
+
 import java.util.concurrent.Semaphore;
 
 //Semaphores – Restrict the number of threads that can access a resource. Example, limit max 10 connections to access a file simultaneously.
