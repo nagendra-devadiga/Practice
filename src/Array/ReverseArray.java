@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class ReverseArray {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 4, 5};
-        reverse(arr);
+//        reverse(arr);
 //        reverseSameArray(arr);
+        reverseWithTwoPointer(arr);
         System.out.println(Arrays.toString(arr));
 
 //        int[] r1 = reverseWithExtraArray(arr);
@@ -50,4 +51,18 @@ public class ReverseArray {
         }
         return reversed;
     }
+
+    private static void reverseWithTwoPointer(int[] arr) {
+        int len = arr.length;
+        int i = 0;
+        int j = len-1;
+        while(i <= j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
 }
