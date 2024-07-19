@@ -1,0 +1,7 @@
+Backtracking
+------------
+Key features
+------------
+1. Choices
+2. Constraints
+3. Goal
