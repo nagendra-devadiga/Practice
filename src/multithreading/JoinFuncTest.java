@@ -3,7 +3,7 @@ package multithreading;
 public class JoinFuncTest implements Runnable {
     public void printIt() throws InterruptedException {
         for (int i = 0; i < 3; i++) {
-            Thread.sleep(100);
+            Thread.sleep(1000);
             System.out.println("Thread " + Thread.currentThread().getName() + " printing " + i);
         }
     }

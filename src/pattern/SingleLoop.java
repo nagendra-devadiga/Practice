@@ -40,5 +40,14 @@ public class SingleLoop {
             sb.append(" ");
         }
 
+        System.out.println("------------------------------------------");
+        sb.delete(0, sb.length());
+        sb.append("  *  ");
+        for (int i = 0; i < n; i++) {
+            System.out.println(sb);
+            sb.deleteCharAt(0);
+            sb.insert(sb.length()/2, "*");
+        }
+
     }
 }
